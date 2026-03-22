@@ -1,0 +1,28 @@
+{
+	"xsappname": "07springodata",
+	"tenant-mode": "dedicated",
+	"scopes": [{
+			"name": "$XSAPPNAME.AnubhavDisplay",
+			"description": "To Display vendor data"
+		},
+		{
+			"name": "$XSAPPNAME.AnubhavEdit",
+			"description": "To Create new vendor data"
+		}
+	],
+	"role-templates": [{
+			"name": "Viewer",
+			"description": "View, Vendor Details",
+			"scope-references": [
+				"$XSAPPNAME.AnubhavDisplay"
+			]
+		},
+		{
+			"name": "Editor",
+			"description": "Edit and Create new Vendor Details",
+			"scope-references": [
+				"$XSAPPNAME.AnubhavEdit"
+			]
+		}
+	]
+}

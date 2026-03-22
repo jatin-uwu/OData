@@ -1,0 +1,16 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:t="sap.ui.table"
+	xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core"
+	controllerName="anubhav.controller.MyOData">
+	<Page title="Welcome to My App">
+		<List id="idList" items="{/VendorSet}">
+			<ObjectListItem intro="{CompanyName}" title="{FirstName}"
+							number="{Status}" numberUnit="{Website}"
+			></ObjectListItem>
+		</List>
+		<footer>
+			<Toolbar>
+				<Button text="Add" icon="sap-icon://add" press="onAdd"></Button>
+			</Toolbar>
+		</footer>
+	</Page>
+</mvc:View>

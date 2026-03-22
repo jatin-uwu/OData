@@ -22,18 +22,18 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        // @formatter:off
         http
+            .csrf().disable()   // ⭐ ADD THIS LINE
             .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
         .and()
             .authorizeRequests()
-            .antMatchers("/jatin.svc/**").permitAll() // checks whether it has scope "<xsappId>.Read"
+            .antMatchers("/jatin.svc/**").permitAll()
             .antMatchers("/vendor").permitAll()
+            .anyRequest().authenticated()
         .and()
             .oauth2ResourceServer()
             .jwt()
             .jwtAuthenticationConverter(getJwtAuthoritiesConverter());
-        // @formatter:on
     }
 
     Converter<Jwt, AbstractAuthenticationToken> getJwtAuthoritiesConverter() {

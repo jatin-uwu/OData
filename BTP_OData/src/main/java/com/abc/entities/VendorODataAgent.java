@@ -37,7 +37,7 @@ public class VendorODataAgent implements ODataInterface {
 		// TODO Auto-generated method stub
 		Vendor p;
 		try {
-			p = (Vendor)source;
+			p = (Vendor)source; 
 		} catch (Exception e) {
 			// TODO: handle exception
 			Map<String, String> targetKey = (Map<String, String>) source;
