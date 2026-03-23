@@ -4,7 +4,7 @@ sap.ui.define(
 		 "anubhav/util/service",
 		 "sap/m/MessageBox"],
 		function(Controller, jQuery, service, MessageBox){
-	return Controller.extend("anubhav.controller.Main",{
+	return Controller.extend("jatin.controller.Main",{
 		onInit: function(){
 			var oModel = new sap.ui.model.json.JSONModel();
 			oModel.setData({

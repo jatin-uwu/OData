@@ -17,7 +17,7 @@ import com.abc.entities.VendorODataAgent;
 @DependsOn("springUtils")
 @SpringBootApplication(scanBasePackages = "com.abc")
 @EnableJpaRepositories(basePackages = "com.abc")
-@EntityScan(basePackages = "com.abc") 
+@EntityScan(basePackages = "com.abc.entities") 
 @ServletComponentScan(basePackages = "com.abc")
 @EnableAsync
 public class Application {

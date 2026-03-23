@@ -3,10 +3,11 @@ package com.abc.entities;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
+
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 import org.apache.olingo.odata2.api.annotation.edm.EdmEntitySet;
 import org.apache.olingo.odata2.api.annotation.edm.EdmEntityType;
@@ -14,15 +15,16 @@ import org.apache.olingo.odata2.api.annotation.edm.EdmKey;
 import org.apache.olingo.odata2.api.annotation.edm.EdmProperty;
 import org.hibernate.annotations.GenericGenerator;
 
-import com.abc .entities.Vendor;
+
 
 import lombok.Getter;
 import lombok.Setter;
 
 @EdmEntitySet
 @EdmEntityType
-@Entity
-public class address {
+@Entity(name = "Address")
+@Table(name="ADDRESS")
+public class Address {
 	
 	@Id
 	@GeneratedValue(generator = "uuid2")
@@ -53,10 +55,10 @@ public class address {
 	@Getter
 	public Vendor vendor;
 	
-	public address() {
+	public Address() {
 		
 	}
-	public address(String addressId, String addressType, String street, String city, String country, String region) {
+	public Address(String addressId, String addressType, String street, String city, String country, String region) {
 		super();
 		this.addressId = addressId;
 		this.addressType = addressType;

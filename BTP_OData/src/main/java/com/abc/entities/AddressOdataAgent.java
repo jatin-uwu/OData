@@ -39,7 +39,7 @@ public class AddressOdataAgent implements ODataInterface {
 	@Override
 	public void createEntity(Object dataToCreate) {
 		// TODO Auto-generated method stub
-		addressAPI.save((address)dataToCreate);
+		addressAPI.save((Address)dataToCreate);
 	}
 
 	@Override
@@ -51,7 +51,7 @@ public class AddressOdataAgent implements ODataInterface {
 	@Override
 	public void updateEntity(Object dataToUpdate) {
 		// TODO Auto-generated method stub
-		addressAPI.save((address)dataToUpdate);
+		addressAPI.save((Address)dataToUpdate);
 	}
 
 	@Override
@@ -59,8 +59,8 @@ public class AddressOdataAgent implements ODataInterface {
 			Map<String, Object> targetKeys) {
 		// TODO Auto-generated method stub
 		Vendor vendor = (Vendor)sourceData;
- 		Optional<address> existingAddr = addressAPI.findById((String) targetKeys.get("AddressId"));
-		address newAddr = existingAddr.get();
+ 		Optional<Address> existingAddr = addressAPI.findById((String) targetKeys.get("AddressId"));
+		Address newAddr = existingAddr.get();
 		newAddr.setVendor(vendor);
 		addressAPI.save(newAddr);
  		

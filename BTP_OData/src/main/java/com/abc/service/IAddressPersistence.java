@@ -2,8 +2,8 @@ package com.abc.service;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.abc.entities.address;
+import com.abc.entities.Address;
 
-public interface IAddressPersistence extends JpaRepository<address, String> {
+public interface IAddressPersistence extends JpaRepository<Address, String> {
 
 }

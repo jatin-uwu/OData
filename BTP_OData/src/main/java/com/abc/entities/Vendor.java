@@ -52,14 +52,14 @@ public class Vendor {
 	
 	@OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
 	@JoinColumn(name="vendor_id", referencedColumnName="ID")
-	@EdmNavigationProperty(toType=address.class, toMultiplicity=Multiplicity.MANY)
-	private List<address> addresses = new ArrayList<>();
+	@EdmNavigationProperty(toType=Address.class, toMultiplicity=Multiplicity.MANY)
+	private List<Address> addresses = new ArrayList<>();
 	
-	public List<address> getAddresses() {
+	public List<Address> getAddresses() {
 		return addresses;
 	}
 
-	public void setAddresses(List<address> addresses) {
+	public void setAddresses(List<Address> addresses) {
 		this.addresses = addresses;
 	}
 

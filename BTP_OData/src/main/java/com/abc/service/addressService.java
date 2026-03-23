@@ -14,11 +14,11 @@ public class addressService {
 	@Autowired
 	IAddressPersistence address;
 	
-	public List<address> getAddress(){
+	public List<Address> getAddress(){
 		return address.findAll();
 	}
 	
-	public address createAddress(address payload) {
+	public Address createAddress(Address payload) {
 		return address.save(payload);
 	}
 	
